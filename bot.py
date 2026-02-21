@@ -879,7 +879,7 @@ def run_biolog(hwnd):
             right_click()
         else:
             left_click()
-        time.sleep(0.02)
+        time.sleep(0.1)
 
     def _drag_click(rx, ry):
         """Drag cursor onto target before clicking (needed for game UI buttons)."""
