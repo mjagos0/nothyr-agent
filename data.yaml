@@ -1,0 +1,12 @@
+path: C:\Users\jagos\Desktop\train
+train: C:\Users\jagos\Desktop\train\train\images
+val: C:\Users\jagos\Desktop\train\val\images
+
+nc: 6
+names:
+  0: Boss
+  1: Buff
+  2: Enemy
+  3: Me
+  4: Statue
+  5: boulder
