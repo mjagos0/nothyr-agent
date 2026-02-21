@@ -863,6 +863,9 @@ _BIOLOG_ROW_STEP    = 30.0 / 780                 # y step between row centers
 _BIOLOG_COLS    = 5
 _BIOLOG_ROWS    = 3
 _BIOLOG_CLOSE   = (790 / 1536, 280 / 780)       # close button
+# Confirm button clicked after each grid right-click
+# Measured on 1536x780: (768, 410) — center of the confirmation dialog button
+_BIOLOG_CONFIRM = (768 / 1536, 410 / 780)
 
 def run_biolog(hwnd):
     """Press F7, click biolog button, right-click 15 grid squares (with confirm between each), click close, ESC×2."""
@@ -913,7 +916,8 @@ def run_biolog(hwnd):
             cx = x0 + col * _BIOLOG_COL_STEP
             cy = y0 + row * _BIOLOG_ROW_STEP
             _fast_click(cx, cy, right=True)
-            press_key(SCAN["esc"])
+            # Click the confirm button instead of pressing ESC
+            _fast_click(*_BIOLOG_CONFIRM)
 
     # 4. Close shopping window
     press_key(SCAN["esc"])
